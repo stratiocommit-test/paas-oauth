@@ -168,7 +168,8 @@ func handleLogin(ctx context.Context, w http.ResponseWriter, r *http.Request) *c
 
 	http.SetCookie(w, infoCookie)
 
-	http.Redirect(w, r, "https://"+r.Host, http.StatusFound)
+	rootUrl := ctx.Value("root-url").(string)
+	http.Redirect(w, r, rootUrl, http.StatusFound)
 
 	return nil
 }
