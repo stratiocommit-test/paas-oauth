@@ -55,6 +55,11 @@ var (
 		Usage: "oauth-callback-url",
 		Value: "https://oauth-callback-url",
 	}
+	flRootUrl = cli.StringFlag{
+		Name: "root-url",
+		Usage: "root-url",
+		Value: "https://root-url",
+	}
 	flOauthProfileUrl = cli.StringFlag{
 		Name: "oauth-profile-url",
 		Usage: "profile url",
