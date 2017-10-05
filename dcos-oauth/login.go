@@ -168,8 +168,15 @@ func handleLogin(ctx context.Context, w http.ResponseWriter, r *http.Request) *c
 
 	http.SetCookie(w, infoCookie)
 
-	rootUrl := ctx.Value("root-url").(string)
-	http.Redirect(w, r, rootUrl, http.StatusFound)
+        rootUrl := ctx.Value("root-url").(string)
+        cookieRedirection, _ := r.Cookie("sso_redirection")
+        if cookieRedirection != nil {
+                rootUrl = cookieRedirection.Value
+                cookieRedirection.MaxAge = -1
+                cookieRedirection.Value = ""
+                http.SetCookie(w, cookieRedirection)
+        }
+        http.Redirect(w, r, rootUrl, http.StatusFound)
 
 	return nil
 }
