@@ -8,7 +8,7 @@ hose {
     BUILDTOOL = 'make'
     DEVTIMEOUT = 15
     LANG = 'go'
-    AGENT = 'centos-base-ssh-67'
+    AGENT = 'centos-base-ssh-74'
 
     DEV = { config ->
         doCompile(config)
