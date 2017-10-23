@@ -27,3 +27,13 @@ test-compile: $(addsuffix .test-compile, $(TEST))
 
 %.test-compile:
 	cd $* && go test -p 1 -v -c .
+
+compile:
+	bin/compile.sh
+
+change-version:
+	echo "Modifying version to: $(version)"
+	echo $(version) > VERSION
+
+deploy:
+	bin/deploy.sh
