@@ -11,9 +11,7 @@ hose {
     AGENT = 'centos-base-ssh-74'
 
     DEV = { config ->
-        input 'Ready to go?'
         doCompile(config)
-        input 'Ready to go?'
         doDeploy(config)
     }
 }
