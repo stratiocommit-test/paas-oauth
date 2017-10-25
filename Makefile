@@ -28,8 +28,8 @@ test-compile: $(addsuffix .test-compile, $(TEST))
 %.test-compile:
 	cd $* && go test -p 1 -v -c .
 
-compile:
-	bin/compile.sh
+package:
+	bin/package.sh
 
 change-version:
 	echo "Modifying version to: $(version)"

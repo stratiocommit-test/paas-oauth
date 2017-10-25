@@ -11,7 +11,7 @@ hose {
     AGENT = 'centos-base-ssh-74'
 
     DEV = { config ->
-        doCompile(config)
+        doPackage(config)
         doDeploy(config)
     }
 }
