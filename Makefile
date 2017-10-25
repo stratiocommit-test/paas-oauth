@@ -8,6 +8,16 @@ LDFLAGS := -X github.com/stratio/paas-oauth/version.REVISION=$(REVISION)
 install:
 	go install -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' ./...
 
+compile:
+	bin/compile.sh
+
+change-version:
+	echo "Modifying version to: $(version)"
+	echo $(version) > VERSION
+
+deploy:
+	bin/deploy.sh
+
 save:
 	godep save ./...
 
@@ -27,13 +37,3 @@ test-compile: $(addsuffix .test-compile, $(TEST))
 
 %.test-compile:
 	cd $* && go test -p 1 -v -c .
-
-compile:
-	bin/compile.sh
-
-change-version:
-	echo "Modifying version to: $(version)"
-	echo $(version) > VERSION
-
-deploy:
-	bin/deploy.sh
