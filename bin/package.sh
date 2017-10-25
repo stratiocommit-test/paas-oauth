@@ -24,5 +24,6 @@ make
 
 ### Awful workaround because of GO
 if [ -f "/home/jenkins/.ssh/config" ]; then
-    rm -f /home/jenkins/.ssh/config
+    chmod 600 /home/jenkins/.ssh/config
+    chown jenkins /home/jenkins/.ssh/config
 fi
