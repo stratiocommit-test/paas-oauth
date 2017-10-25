@@ -32,8 +32,7 @@ package:
 	bin/package.sh
 
 change-version:
-	echo "Modifying version to: $(version)"
-	echo $(version) > VERSION
+	bin/change-version.sh $(version)
 
 deploy:
 	bin/deploy.sh
