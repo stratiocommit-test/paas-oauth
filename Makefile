@@ -6,7 +6,7 @@ export GO15VENDOREXPERIMENT=1
 LDFLAGS := -X github.com/stratio/paas-oauth/version.REVISION=$(REVISION)
 
 install:
-	go install -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' ./...
+	/usr/local/go/bin/go install -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' ./...
 
 save:
 	godep save ./...
@@ -27,3 +27,13 @@ test-compile: $(addsuffix .test-compile, $(TEST))
 
 %.test-compile:
 	cd $* && go test -p 1 -v -c .
+
+compile:
+	bin/compile.sh
+
+change-version:
+	echo "Modifying version to: $(version)"
+	echo $(version) > VERSION
+
+deploy:
+	bin/deploy.sh
