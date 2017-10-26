@@ -10,5 +10,5 @@ if [ -f "/home/jenkins/.ssh/config" ]; then
     chown jenkins /home/jenkins/.ssh/config
 fi
 
-echo "Modifying prometheus-dcos version to: $1"
+echo "Modifying paas-oauth version to: $1"
 echo $1 > VERSION
