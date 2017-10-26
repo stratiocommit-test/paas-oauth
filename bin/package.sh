@@ -21,9 +21,3 @@ cp $PWD/README.md $GOPATH/src/github.com/stratio/paas-oauth
 cd $GOPATH/src/github.com/stratio/paas-oauth
 
 make
-
-### Awful workaround because of GO
-if [ -f "/home/jenkins/.ssh/config" ]; then
-    chmod 600 /home/jenkins/.ssh/config
-    chown jenkins /home/jenkins/.ssh/config
-fi
