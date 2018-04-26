@@ -29,10 +29,10 @@ test-compile: $(addsuffix .test-compile, $(TEST))
 	cd $* && go test -p 1 -v -c .
 
 package:
-	bin/package.sh ${version}
+	bin/package.sh
 
 change-version:
-	bin/change-version.sh ${version}
+	bin/change-version.sh $(version)
 
 deploy:
-	bin/deploy.sh ${version}
+	bin/deploy.sh
