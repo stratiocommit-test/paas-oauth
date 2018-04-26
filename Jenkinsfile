@@ -1,9 +1,10 @@
 @Library('libpipelines@master') _
 
 hose {
-    EMAIL = 'eos'
+    EMAIL = 'cd'
     MODULE = 'paas-oauth'
     REPOSITORY = 'paas-oauth'
+    NEW_VERSIONING = 'true'
     BUILDTOOL = 'make'
     DEVTIMEOUT = 15
     LANG = 'go'
