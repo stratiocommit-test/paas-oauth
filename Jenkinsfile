@@ -8,6 +8,7 @@ hose {
     BUILDTOOL = 'make'
     DEVTIMEOUT = 15
     LANG = 'go'
+    AGENT = 'centos-base-ssh-74'
 
     DEV = { config ->
         doPackage(config)
