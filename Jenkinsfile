@@ -4,7 +4,6 @@ hose {
     EMAIL = 'eos'
     MODULE = 'paas-oauth'
     REPOSITORY = 'paas-oauth'
-    SLACKTEAM = 'stratiopaas'
     BUILDTOOL = 'make'
     DEVTIMEOUT = 15
     LANG = 'go'
