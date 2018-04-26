@@ -1,7 +1,7 @@
 @Library('libpipelines@preproduction') _
 
 hose {
-    EMAIL = 'cd'
+    EMAIL = 'gbecares'
     MODULE = 'paas-oauth'
     REPOSITORY = 'paas-oauth'
     NEW_VERSIONING = 'true'
